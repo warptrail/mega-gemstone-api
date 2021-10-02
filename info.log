@@ -1,0 +1,50 @@
+{"level":"info","message":"Oct-01, 2021 - 3:24 pm >> Congratulations, the server is running!"}
+{"level":"info","message":"Oct-01, 2021 - 3:24 pm >> Congratulations, the server is running!"}
+{"level":"info","message":"Oct-01, 2021 - 3:55 pm >> Congratulations, the server is running!"}
+{"level":"info","message":"Oct-01, 2021 - 3:55 pm >> Congratulations, the server is running!"}
+{"level":"info","message":"Oct-01, 2021 - 3:55 pm >> Congratulations, the server is running!"}
+{"level":"info","message":"Oct-01, 2021 - 3:57 pm >> Congratulations, the server is running!"}
+{"level":"info","message":"Oct-01, 2021 - 3:57 pm >> Congratulations, the server is running!"}
+{"level":"info","message":"Oct-01, 2021 - 3:57 pm >> Congratulations, the server is running!"}
+{"level":"error","message":"Oct-01, 2021 - 4:25 pm >> [object Object]"}
+{"level":"error","message":"Oct-01, 2021 - 4:28 pm >> error is happeneing 832wka3###%"}
+{"level":"error","message":"Oct-01, 2021 - 4:47 pm >> Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"person\" where \"username\" = ? limit ?"}
+{"level":"error","message":"Oct-01, 2021 - 4:49 pm >> user is not defined"}
+{"level":"error","message":"Oct-01, 2021 - 4:49 pm >> user is not defined"}
+{"level":"error","message":"Oct-01, 2021 - 4:49 pm >> user is not defined"}
+{"level":"error","message":"Oct-01, 2021 - 4:55 pm >> roy already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 4:56 pm >> Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"person\" where \"username\" = ? limit ?"}
+{"level":"error","message":"Oct-01, 2021 - 4:58 pm >> no request body - enter a request body with username and password"}
+{"level":"error","message":"Oct-01, 2021 - 6:57 pm >> missing username in request body"}
+{"level":"error","message":"Oct-01, 2021 - 6:58 pm >> \"roy\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 6:58 pm >> \"roy\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 6:58 pm >> missing username in request body"}
+{"level":"error","message":"Oct-01, 2021 - 6:58 pm >> \"roy\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 6:59 pm >> \"roy\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 7:0 pm >> missing username in request body"}
+{"level":"error","message":"Oct-01, 2021 - 7:31 pm >> \"roy\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 7:33 pm >> \"roy\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 7:34 pm >> \"roy\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 7:34 pm >> \"roy\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 7:39 pm >> \"roy\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 7:39 pm >> bcrypt is not defined"}
+{"level":"error","message":"Oct-01, 2021 - 7:47 pm >> \"ted\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 7:52 pm >> \"mark\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 7:53 pm >> salt is not a function"}
+{"level":"error","message":"Oct-01, 2021 - 8:5 pm >> \"larry\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 8:13 pm >> \"frank\" already exists in the database"}
+{"level":"error","message":"Oct-01, 2021 - 11:43 pm >> \"roger\" already exists in the database"}
+{"level":"error","message":"Oct-02, 2021 - 9:26 am >> \"sarah\" already exists in the database"}
+{"level":"error","message":"Oct-02, 2021 - 9:27 am >> \"logan\" already exists in the database"}
+{"level":"error","message":"Oct-02, 2021 - 9:40 am >> missing username in request body"}
+{"level":"error","message":"Oct-02, 2021 - 10:8 am >> data is not defined"}
+{"level":"error","message":"Oct-02, 2021 - 10:10 am >> Incorrect username or password. Cannot login."}
+{"level":"error","message":"Oct-02, 2021 - 10:29 am >> Incorrect username or password. Cannot login."}
+{"level":"error","message":"Oct-02, 2021 - 10:58 am >> Incorrect username or password. Cannot login."}
+{"level":"error","message":"Oct-02, 2021 - 10:58 am >> Incorrect username or password. Cannot login."}
+{"level":"error","message":"Oct-02, 2021 - 11:1 am >> Cannot access 'token' before initialization"}
+{"level":"error","message":"Oct-02, 2021 - 11:1 am >> Cannot access 'token' before initialization"}
+{"level":"error","message":"Oct-02, 2021 - 11:20 am >> Incorrect username or password. Cannot login."}
+{"level":"error","message":"Oct-02, 2021 - 11:21 am >> \"\" already exists in the database"}
+{"level":"error","message":"Oct-02, 2021 - 11:33 am >> email is not defined"}
+{"level":"error","message":"Oct-02, 2021 - 12:49 pm >> Cannot access 'user' before initialization"}
