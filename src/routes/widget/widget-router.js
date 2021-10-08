@@ -1,4 +1,7 @@
 const express = require('express');
+const pdf = require('html-pdf');
+const path = require('path');
+const pdfTemplate = require('../../documents');
 const timestamp = require('../../helpers/timestamp');
 const logger = require('../../logger');
 
@@ -193,5 +196,30 @@ widgetRouter
       next(err);
     }
   });
+
+// Post data from client to make pdf
+widgetRouter.post('/create-pdf', (req, res) => {
+  pdf
+    .create(pdfTemplate(req.body), {
+      width: '400px',
+      printBackground: true,
+    })
+    .toFile('result.pdf', (err) => {
+      if (err) {
+        res.send(Promise.reject());
+      }
+
+      res.send(Promise.resolve());
+    });
+});
+
+widgetRouter.get('/fetch-pdf', authorization, (req, res, next) => {
+  try {
+    const pathToPdf = path.join(__dirname, '../../../result.pdf');
+    res.sendFile(pathToPdf);
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = widgetRouter;

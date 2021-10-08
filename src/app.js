@@ -22,6 +22,7 @@ const morganOption = NODE_ENV === 'production' ? 'tiny' : 'common';
 
 // setup middleware
 app.use(express.json()); // json body parser for POST requests
+app.use(express.urlencoded({ extended: true }));
 app.use(
   morgan(NODE_ENV === 'production' ? 'tiny' : 'common', {
     skip: () => NODE_ENV === 'test',
