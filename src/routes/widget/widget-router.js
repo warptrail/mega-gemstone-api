@@ -213,7 +213,7 @@ widgetRouter.post('/create-pdf', (req, res) => {
     });
 });
 
-widgetRouter.get('/fetch-pdf', authorization, (req, res, next) => {
+widgetRouter.get('/fetch-pdf', (req, res, next) => {
   try {
     const pathToPdf = path.join(__dirname, '../../../result.pdf');
     res.sendFile(pathToPdf);
