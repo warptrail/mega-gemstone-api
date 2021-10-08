@@ -16,25 +16,21 @@ authRouter.post('/register', validInfo, async (req, res, next) => {
     // ^ step #1: destructure the req.body (username, password)
     const { username, password } = req.body;
 
-    const userCredentials = {
-      username,
-      password,
+    // validate password
+    const validatePassword = (password) => {
+      if (password.length < 4) {
+        return 'Password must be 4 characters or longer';
+      }
+      if (password.startsWith(' ') || password.endsWith(' ')) {
+        return 'Password must not start or end with empty spaces';
+      }
+      return null;
     };
 
-    // for (const [key, value] of Object.entries(userCredentials)) {
-    //   if (value == null) {
-    //     logger.error(`${timestamp()} >> missing ${key} in request body`);
-    //     return res.status(400).json({
-    //       message: `Missing '${key}' in request body`,
-    //     });
-    //   }
-    // }
-
-    // if (!userCredentials.username || !userCredentials.password) {
-    //   return res
-    //     .status(400)
-    //     .json({ message: 'cannot have blank values in request body' });
-    // }
+    const passwordError = validatePassword(password);
+    if (passwordError) {
+      return res.status(400).json({ error: passwordError });
+    }
 
     // ^ step #2: check if user exists
 
@@ -92,7 +88,7 @@ authRouter.post('/register', validInfo, async (req, res, next) => {
       user_uid: insertedNewUser.user_uid,
       username: insertedNewUser.username,
     };
-    const token = createJwt(subject, payload);
+    const token = { token: createJwt(subject, payload) };
 
     res.json(token);
   } catch (error) {
@@ -155,10 +151,10 @@ authRouter.post('/login', validInfo, async (req, res, next) => {
     }
 
     // ^ step #4: if pass the validation, return jwt
-    const subject = dbUser.username;
+    const subject = dbUser.user_uid;
     const payload = {
-      user_uid: dbUser.user_uid,
       username: dbUser.username,
+      user_uid: dbUser.user_uid,
     };
     const token = await createJwt(subject, payload);
 
@@ -175,10 +171,18 @@ authRouter.post('/login', validInfo, async (req, res, next) => {
 
 authRouter.get('/verified', authorization, async (req, res, next) => {
   try {
-    res.json(true);
+    res.json({ isVerified: true, message: 'token is verified', error: false });
   } catch (error) {
     next(error);
   }
+});
+
+// ! Refresh Token Endpoint
+
+authRouter.post('/refresh', authorization, (req, res) => {
+  const sub = req.user.user_uid;
+  const payload = { user_uid: req.user.user_uid, username: req.user.username };
+  res.send({ token: createJwt(sub, payload) });
 });
 
 module.exports = authRouter;

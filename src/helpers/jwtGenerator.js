@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = require('../config');
+const { JWT_SECRET, JWT_EXPIRY } = require('../config');
 
 const createJwt = (subject, payload) => {
   return jwt.sign(payload, JWT_SECRET, {
     subject,
     algorithm: 'HS256',
-    expiresIn: 300,
+    expiresIn: JWT_EXPIRY,
   });
 };
 

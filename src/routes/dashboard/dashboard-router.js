@@ -4,7 +4,7 @@ const authorization = require('../../middleware/authorization');
 
 dashboardRouter.get('/', authorization, async (req, res, next) => {
   try {
-    const userId = req.user;
+    const userId = req.user.user_uid;
     const data = req.app.get('db');
 
     const getUserById = (db, userId) => {
@@ -14,6 +14,7 @@ dashboardRouter.get('/', authorization, async (req, res, next) => {
         .first();
     };
     const user = await getUserById(data, userId);
+    // console.log(user.user_uid, 'req.user');
     console.log(user);
     res.json(user);
   } catch (error) {

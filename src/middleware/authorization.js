@@ -10,9 +10,7 @@ const authorize = async (req, res, next) => {
 
     // check token exists
     if (!jwToken) {
-      return res
-        .status(403)
-        .json({ message: 'You Shall Not Be Authorized!!!' });
+      return res.status(403).json({ error: true, message: 'No Token Exists' });
     }
 
     // check token is valid
@@ -20,11 +18,15 @@ const authorize = async (req, res, next) => {
     // that we can use in our routes
     const payload = jwt.verify(jwToken, JWT_SECRET);
 
-    req.user = payload.user_uid;
-    console.log(req.user);
+    const user = { username: payload.username, user_uid: payload.user_uid };
+
+    req.user = user;
+    console.log('token authorized', req.user);
     next();
   } catch (error) {
-    return res.status(403).json({ message: 'You Shall Not Be Authorized!!!' });
+    return res
+      .status(403)
+      .json({ isVerified: false, error: true, message: 'Invalid Token' });
   }
 };
 
