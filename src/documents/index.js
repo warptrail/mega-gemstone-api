@@ -26,7 +26,7 @@ module.exports = (data) => {
     body {
        color: #e007e8;
       background: black;
-      font-size: 14px;
+      font-size: 8px;
     }
 
     h1 {

@@ -33,7 +33,6 @@ app.use(helmet());
 
 // ^ ROUTES
 app.get('/', (req, res) => {
-  // const timestamp = dayjs().format('MMM-DD, YYYY - h:m a');
   logger.info(`${timestamp()} >> Congratulations, the server is running!`);
   res.send(
     `Hello, Stranger. It is currently ${timestamp()}. The clock is ticking...`

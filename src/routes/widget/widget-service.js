@@ -6,6 +6,14 @@ const WidgetService = {
       .where('user_uid', userId)
       .orderBy('w_created_at');
   },
+  getAllWidgetsByName(db, userId) {
+    return db
+      .from('widget')
+      .select('*')
+      .where('user_uid', userId)
+      .orderBy('w_title', 'asc');
+  },
+
   testId(id) {
     // Regular expression to check if string is a valid UUID
     const regexExp =

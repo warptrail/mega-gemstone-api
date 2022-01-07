@@ -11,7 +11,7 @@ const validWidget = require('../../middleware/validWidget');
 // * Init the widget router
 const widgetRouter = express.Router();
 
-// * GET all widgets
+// * GET all widgets - order by date created
 widgetRouter
   .route('/all')
   .all(authorization)
@@ -24,6 +24,22 @@ widgetRouter
       );
 
       // send the response
+      res.json(widgets);
+    } catch (err) {
+      next(err);
+    }
+  });
+
+// * GET all widgets - order by name
+widgetRouter
+  .route('/all/name')
+  .all(authorization)
+  .get(async (req, res, next) => {
+    try {
+      const widgets = await WidgetService.getAllWidgetsByName(
+        req.app.get('db'),
+        req.user.user_uid
+      );
       res.json(widgets);
     } catch (err) {
       next(err);
