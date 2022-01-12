@@ -36,6 +36,8 @@ INSERT INTO person
 		'$2a$10$LEidBMx0TI8vxUEtQJ5teuXTX5CtqWUsh1dXjcAapzVh8srb0UgIC'
   );
 
+  -- user_master_password = "1234"
+
 INSERT INTO widget (w_title, w_email, w_username, w_pswd, w_fullname, user_uid) VALUES (
 	'Myspace',
 	'james@myspace.com',

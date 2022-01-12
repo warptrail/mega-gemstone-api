@@ -4,6 +4,7 @@ const path = require('path');
 const pdfTemplate = require('../../documents');
 const timestamp = require('../../helpers/timestamp');
 const logger = require('../../logger');
+const fs = require('fs');
 
 const WidgetService = require('./widget-service');
 const authorization = require('../../middleware/authorization');
@@ -232,7 +233,18 @@ widgetRouter.post('/create-pdf', (req, res) => {
 widgetRouter.get('/fetch-pdf', (req, res, next) => {
   try {
     const pathToPdf = path.join(__dirname, '../../../result.pdf');
-    res.sendFile(pathToPdf);
+    // res.sendFile(pathToPdf);
+
+    res.download(pathToPdf, 'result.pdf', function (err) {
+      if (err) {
+        console.log(err); // Check error if you want
+      }
+      fs.unlink(pathToPdf, function () {
+        console.log('File was deleted'); // Callback
+      });
+
+      // fs.unlinkSync(yourFilePath) // If you don't need callback
+    });
   } catch (error) {
     next(error);
   }
