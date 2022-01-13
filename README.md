@@ -30,9 +30,17 @@ I take no responsibility if the data stored in your clone of this API is comprom
 
 ## Starting the Server
 
+Make sure your PostgreSQL database is running by entering `pg_ctl start` in your terminal.
+
 In the project directory root CLI run:
 `npm start`
 Then server will be accessible at localhost:8000 or the port you specified in the `.env` file.
+
+To run the server in developer mode via nodemon run:
+`npm run dev`
+
+At this point, keep your server running while running up the Gemstone Cryochamber client. There you will be able to get, post, patch, and delete your accounts as well as export them to pdf formatl If not installed, clone and set up the client reposotory that can be found at this url:
+[https://github.com/warptrail/mega-gemstone](https://github.com/warptrail/mega-gemstone)
 
 ## Endpoints
 
